@@ -1,0 +1,23 @@
+{
+  "name": "frontend-project-lvl1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KalyakinAG/frontend-project-lvl1.git"
+  },
+  "author": "Andrey Kalyakin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KalyakinAG/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/KalyakinAG/frontend-project-lvl1#readme",
+  "description": "",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  }
+}
