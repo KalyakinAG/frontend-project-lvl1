@@ -1,5 +1,5 @@
 {
-  "name": "frontend-project-lvl1",
+  "name": "frontend-project-lvl1-kalyaka",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,8 @@
   "type": "module",
   "bin": {
     "brain-games": "bin/brain-games.js"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }
