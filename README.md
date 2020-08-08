@@ -1,4 +1,6 @@
 # frontend-project-lvl1
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
-<img src="https://github.com/kalyakinag/frontend-project-lvl1/workflows/CI/badge.svg" />
-<a href="https://asciinema.org/a/352339">Аскинема с примером установки и игры</a>
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/ee6031cc3d97053e9573/maintainability)](https://codeclimate.com/github/KalyakinAG/frontend-project-lvl1/maintainability)
+![CI](https://github.com/kalyakinag/frontend-project-lvl1/workflows/CI/badge.svg)
+
+[Аскинема для brain-even](https://asciinema.org/a/352339)
