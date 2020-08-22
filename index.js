@@ -1,27 +1,16 @@
-import readlineSync from 'readline-sync';
+import brainCalc from './src/games/brainCalc.js';
+import brainEven from './src/games/brainEven.js';
+import brainGCD from './src/games/brainGCD.js';
+import gameEngine from './src/gameEngine.js';
 
-import { gameEngine, brainEvenStep, brainCalcStep } from './src/games.js';
-
-export const brainEven = () => {
-  console.log('Welcome to the Brain Games!');
-  const playerName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${playerName}`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  if (gameEngine(brainEvenStep)) {
-    console.log(`Congratulations, ${playerName}!`);
-  } else {
-    console.log(`Let's try again, ${playerName}!`);
-  }
+export const gameBrainCalc = () => {
+  gameEngine(brainCalc, 'What is the result of the expression?');
 };
 
-export const brainCalc = () => {
-  console.log('Welcome to the Brain Games!');
-  const playerName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${playerName}!`);
-  console.log('What is the result of the expression?');
-  if (gameEngine(brainCalcStep)) {
-    console.log(`Congratulations, ${playerName}!`);
-  } else {
-    console.log(`Let's try again, ${playerName}!`);
-  }
+export const gameBrainEven = () => {
+  gameEngine(brainEven, 'Answer "yes" if the number is even, otherwise answer "no".');
+};
+
+export const gameBrainGCD = () => {
+  gameEngine(brainGCD, 'Find the greatest common divisor of given numbers.');
 };
