@@ -1,4 +1,6 @@
-const brainProgression = () => {
+import playGame from './gameEngine.js';
+
+const play = () => {
   const maxIndex = 9;
   const oper = Math.round(Math.random() * 1) === 0 ? '-' : '+';
   const step = Math.round(Math.random() * 10);
@@ -21,4 +23,8 @@ const brainProgression = () => {
   return [`${numArr.map(mapNumToString).join(' ')}`, numArr[secretIndex].toString()];
 };
 
-export default brainProgression;
+export const playGameBrainProgression = () => {
+  playGame(play, 'What is the result of the expression?');
+};
+
+export default playGameBrainProgression;

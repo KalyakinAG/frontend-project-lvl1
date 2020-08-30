@@ -1,4 +1,6 @@
-const brainCalc = () => {
+import playGame from './gameEngine.js';
+
+const play = () => {
   const num1 = Math.round(Math.random() * 100);
   const num2 = Math.round(Math.random() * 10);
   const operEnum = ['+', '-', '*'];
@@ -17,4 +19,8 @@ const brainCalc = () => {
   return [`${num1} ${oper} ${num2}`, result.toString()];
 };
 
-export default brainCalc;
+export const playGameBrainCalc = () => {
+  playGame(play, 'What is the result of the expression?');
+};
+
+export default playGameBrainCalc;

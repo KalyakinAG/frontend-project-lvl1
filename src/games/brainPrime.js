@@ -1,4 +1,6 @@
-const brainPrime = () => {
+import playGame from './gameEngine.js';
+
+const play = () => {
   const isPrime = (num) => {
     for (let div = 2; div < num / 2; div += 1) {
       if (num % div === 0) {
@@ -11,4 +13,8 @@ const brainPrime = () => {
   return [num.toString(), isPrime(num) ? 'yes' : 'no'];
 };
 
-export default brainPrime;
+export const playGameBrainPrime = () => {
+  playGame(play, 'What is the result of the expression?');
+};
+
+export default playGameBrainPrime;
