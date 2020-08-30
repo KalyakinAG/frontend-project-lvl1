@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 const playGameLoop = (play) => {
   for (let step = 1; step <= 3; step += 1) {
-    const [gameQuestion, gameAnswer] = play();
+    const { question: gameQuestion, answer: gameAnswer } = play();
     console.log(`Question: ${gameQuestion}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer !== gameAnswer) {

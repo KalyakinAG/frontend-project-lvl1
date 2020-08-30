@@ -1,13 +1,16 @@
-import playGame from './gameEngine.js';
+import playGame from '../playGame.js';
+import randomInt from '../randomInt.js';
+
+const max = 10;
+const isEven = (num) => num % 2 === 0;
 
 const play = () => {
-  const isEven = (num) => num % 2 === 0;
-  const num = Math.round(Math.random() * 10);
-  return [num, isEven(num) ? 'yes' : 'no'];
+  const num = randomInt(max);
+  return { question: num.toString(), answer: isEven(num) ? 'yes' : 'no' };
 };
 
 export const playGameBrainEven = () => {
-  playGame(play, 'What is the result of the expression?');
+  playGame(play, 'Answer "yes" if the number is even, otherwise answer "no".');
 };
 
 export default playGameBrainEven;

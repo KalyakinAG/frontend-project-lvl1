@@ -1,20 +1,25 @@
-import playGame from './gameEngine.js';
+import playGame from '../playGame.js';
+import randomInt from '../randomInt.js';
+
+const isPrime = (num) => {
+  for (let div = 2; div < num / 2; div += 1) {
+    if (num % div === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const max = 100;
+const min = 3;// минимальное простое число = 3
 
 const play = () => {
-  const isPrime = (num) => {
-    for (let div = 2; div < num / 2; div += 1) {
-      if (num % div === 0) {
-        return false;
-      }
-    }
-    return true;
-  };
-  const num = 3 + Math.round(Math.random() * 100);
-  return [num.toString(), isPrime(num) ? 'yes' : 'no'];
+  const num = min + randomInt(max - min);
+  return { question: num.toString(), answer: isPrime(num) ? 'yes' : 'no' };
 };
 
 export const playGameBrainPrime = () => {
-  playGame(play, 'What is the result of the expression?');
+  playGame(play, 'Answer "yes" if given number is prime. Otherwise answer "no".');
 };
 
 export default playGameBrainPrime;

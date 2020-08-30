@@ -1,4 +1,5 @@
-import playGame from './gameEngine.js';
+import playGame from '../playGame.js';
+import randomInt from '../randomInt.js';
 
 const gcd = (a, b) => {
   if (b === 0) {
@@ -7,15 +8,18 @@ const gcd = (a, b) => {
   return gcd(b, a % b);
 };
 
+const maxBasis = 10;
+const maxMultiplicity = 10;
+
 const play = () => {
-  const numGCD = Math.round(Math.random() * 10);
-  const num1 = numGCD * Math.round(Math.random() * 10);
-  const num2 = numGCD * Math.round(Math.random() * 10);
-  return [`${num1} ${num2}`, gcd(num1, num2).toString()];
+  const numBasis = randomInt(maxBasis);
+  const num1 = numBasis * randomInt(maxMultiplicity);
+  const num2 = numBasis * randomInt(maxMultiplicity);
+  return { question: `${num1} ${num2}`, answer: gcd(num1, num2).toString() };
 };
 
 export const playGameBrainGCD = () => {
-  playGame(play, 'What is the result of the expression?');
+  playGame(play, 'Find the greatest common divisor of given numbers.');
 };
 
 export default playGameBrainGCD;
