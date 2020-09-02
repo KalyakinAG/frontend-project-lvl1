@@ -1,15 +1,15 @@
 import playGame from '../playGame.js';
-import randomInt from '../randomInt.js';
+import getRandomInt from '../getRandomInt.js';
 
 const maxLength = 10;//  длина ряда прогрессии
 const maxStep = 10;//  величина шага арифметической прогрессии
 const max = 10;
 
-const play = () => {
-  const oper = randomInt(1) === 0 ? '-' : '+';
-  const step = randomInt(maxStep);
-  const secretIndex = Math.round(Math.random() * (maxLength - 1));
-  const progression = [randomInt(max)];
+const getGameData = () => {
+  const step = getRandomInt(-maxStep, maxStep);
+  const secretIndex = getRandomInt(0, maxLength - 1);
+  const progression = [];
+  const startNum = getRandomInt(0, max);
   const mapNumToString = (item, index) => {
     if (index === secretIndex) {
       return '..';
@@ -17,18 +17,14 @@ const play = () => {
     return item.toString();
   };
   //  Формирование прогрессии
-  for (let i = 1; i < maxLength; i += 1) {
-    if (oper === '-') {
-      progression.push(progression[i - 1] - step);
-    } else {
-      progression.push(progression[i - 1] + step);
-    }
+  for (let i = 0; i < maxLength; i += 1) {
+    progression.push(startNum + step * i);
   }
   return { question: `${progression.map(mapNumToString).join(' ')}`, answer: progression[secretIndex].toString() };
 };
 
 const playGameBrainProgression = () => {
-  playGame(play, 'What number is missing in the progression?');
+  playGame(getGameData, 'What number is missing in the progression?');
 };
 
 export default playGameBrainProgression;

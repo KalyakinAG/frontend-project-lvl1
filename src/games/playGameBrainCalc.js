@@ -1,16 +1,16 @@
 import playGame from '../playGame.js';
-import randomInt from '../randomInt.js';
+import getRandomInt from '../getRandomInt.js';
 
 const max1 = 100;
 const max2 = 10;
-const operEnum = ['+', '-', '*'];
+const operations = ['+', '-', '*'];
 
-const play = () => {
-  const num1 = randomInt(max1);
-  const num2 = randomInt(max2);
-  const oper = operEnum[randomInt(operEnum.length - 1)];
+const getGameData = () => {
+  const num1 = getRandomInt(0, max1);
+  const num2 = getRandomInt(0, max2);
+  const operation = operations[getRandomInt(0, operations.length - 1)];
   let result;
-  switch (oper) {
+  switch (operation) {
     case '+':
       result = num1 + num2;
       break;
@@ -21,13 +21,13 @@ const play = () => {
       result = num1 * num2;
       break;
     default:
-      console.log('Операция выражения не определена!');
   }
-  return { question: `${num1} ${oper} ${num2}`, answer: result.toString() };
+  return { question: `${num1} ${operation} ${num2}`, answer: result.toString() };
 };
 
 const playGameBrainCalc = () => {
-  playGame(play, 'What is the result of the expression?');
+  const gameDescription = 'What is the result of the expression?';
+  playGame(getGameData, gameDescription);
 };
 
 export default playGameBrainCalc;
