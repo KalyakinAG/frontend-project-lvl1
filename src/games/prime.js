@@ -1,5 +1,5 @@
-import playGame from '../playGame.js';
-import getRandomInt from '../getRandomInt.js';
+import { playGame } from '../game-engine.js';
+import { getRandomInt } from '../utils.js';
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -13,16 +13,17 @@ const isPrime = (num) => {
   return true;
 };
 
-const max = 100;
+const numMax = 100;
+const numMin = -10;
 
 const getGameData = () => {
-  const num = getRandomInt(-max, max);
+  const num = getRandomInt(numMin, numMax);
   return { question: num.toString(), answer: isPrime(num) ? 'yes' : 'no' };
 };
 
-const playGameBrainPrime = () => {
+const prime = () => {
   const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   playGame(getGameData, gameDescription);
 };
 
-export default playGameBrainPrime;
+export default prime;

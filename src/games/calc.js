@@ -1,13 +1,13 @@
-import playGame from '../playGame.js';
-import getRandomInt from '../getRandomInt.js';
+import { playGame } from '../game-engine.js';
+import { getRandomInt } from '../utils.js';
 
-const max1 = 100;
-const max2 = 10;
+const num1Max = 100;
+const num2Max = 10;
 const operations = ['+', '-', '*'];
 
 const getGameData = () => {
-  const num1 = getRandomInt(0, max1);
-  const num2 = getRandomInt(0, max2);
+  const num1 = getRandomInt(0, num1Max);
+  const num2 = getRandomInt(0, num2Max);
   const operation = operations[getRandomInt(0, operations.length - 1)];
   let result;
   switch (operation) {
@@ -25,9 +25,9 @@ const getGameData = () => {
   return { question: `${num1} ${operation} ${num2}`, answer: result.toString() };
 };
 
-const playGameBrainCalc = () => {
+const calc = () => {
   const gameDescription = 'What is the result of the expression?';
   playGame(getGameData, gameDescription);
 };
 
-export default playGameBrainCalc;
+export default calc;

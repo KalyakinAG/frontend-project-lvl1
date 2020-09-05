@@ -1,5 +1,5 @@
-import playGame from '../playGame.js';
-import getRandomInt from '../getRandomInt.js';
+import { playGame } from '../game-engine.js';
+import { getRandomInt } from '../utils.js';
 
 const getGCD = (a, b) => {
   if (b === 0) {
@@ -18,9 +18,9 @@ const getGameData = () => {
   return { question: `${num1} ${num2}`, answer: getGCD(num1, num2).toString() };
 };
 
-const playGameBrainGCD = () => {
+const gcd = () => {
   const gameDescription = 'Find the greatest common divisor of given numbers.';
   playGame(getGameData, gameDescription);
 };
 
-export default playGameBrainGCD;
+export default gcd;
