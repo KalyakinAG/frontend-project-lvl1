@@ -18,16 +18,19 @@
 ### Установка пакета из хранилища npm
 
 ```bash
-npm -g install frontend-project-lvl1-kalyaka
+npm install frontend-project-lvl1-kalyaka -g
 ```
 
 ### Установка из репозитория github
 
-- Склонировать репозиторий в локальную папку
+- Склонировать репозиторий
 - Перейти в текущую директорию пакета
-- Запустить последовательно команды:
+- Опубликовать пакет локально
+- Собрать пакет локульно
 
 ```bash
+> git clone https://github.com/KalyakinAG/frontend-project-lvl1.git ./brain-games
+> cd brain-games
 > make publish
 > make link
 ```
@@ -48,6 +51,12 @@ npm -g install frontend-project-lvl1-kalyaka
 
 ```bash
 > make uninstall
+```
+
+Или удалить пакет глобально:
+
+```bash
+> npm uninstall frontend-project-lvl1-kalyaka -g
 ```
 
 ## Примеры игр
