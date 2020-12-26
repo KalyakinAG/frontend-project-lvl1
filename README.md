@@ -26,7 +26,7 @@ npm install frontend-project-lvl1-kalyaka -g
 - Склонировать репозиторий
 - Перейти в текущую директорию пакета
 - Опубликовать пакет локально
-- Собрать пакет локульно
+- Собрать пакет локально
 
 ```bash
 > git clone https://github.com/KalyakinAG/frontend-project-lvl1.git ./brain-games
